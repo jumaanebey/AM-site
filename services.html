@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Services | Amelia Norvell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 200;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: 1.5rem;
+            color: var(--medium-text);
+            font-weight: 400;
+        }
+
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 122, 109, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--pine-green);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--pine-green);
+        }
+
+        nav a.active {
+            color: var(--pine-green);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            padding: 12rem 5% 5rem;
+            text-align: center;
+            background: var(--light-gray);
+        }
+
+        .page-header h1 {
+            color: var(--dark-text);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3.5rem 2.5rem;
+            border: 1px solid var(--warm-gray);
+            border-radius: 24px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(100, 122, 109, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--pine-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            color: var(--medium-text);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gold-accent);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 6rem 5%;
+            background: var(--light-gray);
+            margin-top: 5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--pine-green);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--pine-green);
+            border-radius: 50px;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--pine-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 122, 109, 0.2);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .page-header {
+                padding: 10rem 5% 4rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .page-header h1 {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Amelia Norvell</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="approach.html">Approach</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>How We Work Together</h1>
+        <p>As a PCC (Professional Certified Coach) specializing in MBTI and Enneagram assessments, I bring corporate expertise from Capital IQ/S&P and ZocDoc to create transformational coaching experiences for both corporate and private clients.</p>
+    </section>
+
+    <!-- Corporate Clients Section -->
+    <section>
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 200; margin-bottom: 3rem; color: var(--pine-green); text-align: center;">Corporate Clients</h2>
+
+        <!-- Individuals -->
+        <div style="margin-bottom: 5rem;">
+            <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-gray);">Individuals</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">6M</div>
+                    <h3 style="font-size: 1.3rem;">Ongoing 1:1 Coaching</h3>
+                    <p>Sustained partnership for deep transformation and leadership development.</p>
+                    <ul>
+                        <li>6-month engagement</li>
+                        <li>Bi-weekly sessions</li>
+                        <li>Goal setting & accountability</li>
+                        <li>Confidential support</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">360°</div>
+                    <h3 style="font-size: 1.3rem;">1:1 Coaching + 360 Review</h3>
+                    <p>Comprehensive feedback integration for accelerated self-awareness and growth.</p>
+                    <ul>
+                        <li>6-month engagement</li>
+                        <li>360° feedback process</li>
+                        <li>Stakeholder insights</li>
+                        <li>Action planning</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">12M</div>
+                    <h3 style="font-size: 1.3rem;">Extended 1:1 Coaching</h3>
+                    <p>Year-long partnership for sustained transformation and leadership mastery.</p>
+                    <ul>
+                        <li>12-month engagement</li>
+                        <li>Deep behavioral shifts</li>
+                        <li>Long-term accountability</li>
+                        <li>Sustained impact</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">360+</div>
+                    <h3 style="font-size: 1.3rem;">Extended Coaching + 360</h3>
+                    <p>The most comprehensive offering combining long-term coaching with stakeholder feedback.</p>
+                    <ul>
+                        <li>12-month engagement</li>
+                        <li>360° review integration</li>
+                        <li>Quarterly progress check-ins</li>
+                        <li>Maximum impact potential</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Teams -->
+        <div style="margin-bottom: 5rem;">
+            <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-gray);">Executive Teams</h3>
+            <div class="service-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="service-icon">⭐</div>
+                <h3 style="font-size: 1.4rem;">Org Clarity & Team Effectiveness: The Advantage</h3>
+                <p style="font-size: 1.1rem;">Signature program based on Patrick Lencioni's The Advantage framework for building cohesive, high-performing executive teams.</p>
+                <ul>
+                    <li>2-day offsite facilitation</li>
+                    <li>Quarterly team effectiveness sessions</li>
+                    <li>Strategic clarity & alignment</li>
+                    <li>Organizational health assessment</li>
+                    <li>Ongoing team development</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Teams -->
+        <div style="margin-bottom: 5rem;">
+            <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-gray);">Teams</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">MB</div>
+                    <h3 style="font-size: 1.3rem;">MBTI Typing & Individual Shares</h3>
+                    <p>Myers-Briggs Type Indicator assessment and personalized debrief sessions.</p>
+                    <ul>
+                        <li>1-2 sessions</li>
+                        <li>Individual typing</li>
+                        <li>Group sharing & insights</li>
+                        <li>Team dynamics awareness</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">EN</div>
+                    <h3 style="font-size: 1.3rem;">Enneagram Typing & Shares</h3>
+                    <p>Enneagram assessment for deep self-awareness and interpersonal understanding.</p>
+                    <ul>
+                        <li>1-2 sessions</li>
+                        <li>Type identification</li>
+                        <li>Individual debriefs</li>
+                        <li>Motivation & growth paths</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teams and/or Groups -->
+        <div style="margin-bottom: 5rem;">
+            <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-gray);">Teams &amp; Groups</h3>
+
+            <h4 style="font-size: 1.2rem; color: var(--pine-green); margin-top: 2rem; margin-bottom: 1.5rem;">Communications</h4>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3 style="font-size: 1.3rem;">Effective Written Communications</h3>
+                    <p>Elevate clarity, impact, and professionalism in written communications.</p>
+                    <ul>
+                        <li>1 session</li>
+                        <li>Email & memo best practices</li>
+                        <li>Clarity & conciseness</li>
+                        <li>Professional tone</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💫</div>
+                    <h3 style="font-size: 1.3rem;">Confidence & Presence</h3>
+                    <p>Develop executive presence and communicate with authentic confidence.</p>
+                    <ul>
+                        <li>1 session</li>
+                        <li>Body language & voice</li>
+                        <li>Presentation skills</li>
+                        <li>Authority with authenticity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 style="font-size: 1.2rem; color: var(--pine-green); margin-top: 2rem; margin-bottom: 1.5rem;">Self-Awareness</h4>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3 style="font-size: 1.3rem;">Identifying & Shifting Limiting Beliefs</h3>
+                    <p>Recognize and transform the unconscious beliefs holding you back.</p>
+                    <ul>
+                        <li>1 session</li>
+                        <li>Belief excavation</li>
+                        <li>Reframing techniques</li>
+                        <li>New empowering narratives</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 style="font-size: 1.3rem;">Self-Advocacy via Clarifying Unmet Needs</h3>
+                    <p>Discover what you truly need and learn to advocate for it effectively.</p>
+                    <ul>
+                        <li>1 session</li>
+                        <li>Needs assessment</li>
+                        <li>Boundary setting</li>
+                        <li>Effective requests</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3 style="font-size: 1.3rem;">Team Effectiveness: MBTI Typing & Activities</h3>
+                    <p>Build team cohesion through personality awareness and appreciation.</p>
+                    <ul>
+                        <li>1 session</li>
+                        <li>MBTI team mapping</li>
+                        <li>Interactive activities</li>
+                        <li>Communication strategies</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪞</div>
+                    <h3 style="font-size: 1.3rem;">Johari Window & Values</h3>
+                    <p>Explore blind spots and core values for authentic leadership.</p>
+                    <ul>
+                        <li>1 session</li>
+                        <li>Self vs. others perception</li>
+                        <li>Values clarification</li>
+                        <li>Alignment & authenticity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Clients Section -->
+    <section style="background: var(--light-gray); padding: 8rem 5%; margin-top: 3rem;">
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 200; margin-bottom: 3rem; color: var(--pine-green); text-align: center;">Private Clients</h2>
+
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <!-- Individuals -->
+            <div style="margin-bottom: 5rem;">
+                <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-gray);">Individuals</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">3M</div>
+                        <h3 style="font-size: 1.3rem;">Foundational 1:1 Coaching</h3>
+                        <p>Perfect starting point for focused personal or professional development.</p>
+                        <ul>
+                            <li>3-month engagement</li>
+                            <li>Goal-focused sessions</li>
+                            <li>Momentum building</li>
+                            <li>Skill development</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">6M+</div>
+                        <h3 style="font-size: 1.3rem;">1:1 Coaching with Assessment</h3>
+                        <p>Deeper partnership enhanced by personality insights from MBTI or Enneagram.</p>
+                        <ul>
+                            <li>6-month engagement</li>
+                            <li>1 personality assessment</li>
+                            <li>Self-awareness tools</li>
+                            <li>Behavioral insights</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">12M+</div>
+                        <h3 style="font-size: 1.3rem;">Comprehensive Coaching Journey</h3>
+                        <p>Year-long transformation with dual personality assessments for maximum insight.</p>
+                        <ul>
+                            <li>12-month engagement</li>
+                            <li>2 personality assessments</li>
+                            <li>Deep self-discovery</li>
+                            <li>Lasting transformation</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3 style="font-size: 1.3rem;">Essence Convo + Goal Setting</h3>
+                        <p>Discover your core essence and align your goals with your authentic self.</p>
+                        <ul>
+                            <li>4 sessions</li>
+                            <li>Values excavation</li>
+                            <li>Purpose alignment</li>
+                            <li>Strategic goal creation</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">MB</div>
+                        <h3 style="font-size: 1.3rem;">MBTI Typing & Debriefs</h3>
+                        <p>Comprehensive Myers-Briggs exploration with personalized application.</p>
+                        <ul>
+                            <li>4 sessions</li>
+                            <li>Assessment & typing</li>
+                            <li>In-depth debriefs</li>
+                            <li>Practical applications</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">EN</div>
+                        <h3 style="font-size: 1.3rem;">Enneagram Typing & Debriefs</h3>
+                        <p>Deep dive into Enneagram wisdom for profound self-understanding.</p>
+                        <ul>
+                            <li>4 sessions</li>
+                            <li>Type identification</li>
+                            <li>Growth path mapping</li>
+                            <li>Integration practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Ideas -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-gray);">New Offerings</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">❤️</div>
+                        <h3 style="font-size: 1.3rem;">Expanding EQ & Self-Regulation</h3>
+                        <p>Build emotional intelligence muscles for better relationships and decision-making.</p>
+                        <ul>
+                            <li>6 sessions</li>
+                            <li>Emotional awareness</li>
+                            <li>Regulation strategies</li>
+                            <li>Empathy development</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🧭</div>
+                        <h3 style="font-size: 1.3rem;">Defining Values / Higher Commitments</h3>
+                        <p>Clarify what matters most and make decisions aligned with your core values.</p>
+                        <ul>
+                            <li>3 sessions</li>
+                            <li>Values identification</li>
+                            <li>Priority clarification</li>
+                            <li>Decision framework</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👂</div>
+                        <h3 style="font-size: 1.3rem;">3 Levels of Listening</h3>
+                        <p>Transform conversations through advanced listening skills.</p>
+                        <ul>
+                            <li>Coming soon</li>
+                            <li>Active listening mastery</li>
+                            <li>Deep understanding</li>
+                            <li>Presence cultivation</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💬</div>
+                        <h3 style="font-size: 1.3rem;">Difficult Conversations / Feedback Basics</h3>
+                        <p>Navigate challenging dialogues with confidence and compassion.</p>
+                        <ul>
+                            <li>Coming soon</li>
+                            <li>Feedback frameworks</li>
+                            <li>Conflict navigation</li>
+                            <li>Courageous conversations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h3>Ready to Elevate Your Leadership?</h3>
+        <p>Let's explore how we can work together to unlock your full potential.</p>
+        <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Amelia Norvell Executive Coaching. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Crafted with attention to detail and commitment to excellence.</p>
+    </footer>
+</body>
+</html>

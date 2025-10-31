@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Amelia Norvell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 200;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            color: var(--pine-green);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: 1.5rem;
+            color: var(--medium-text);
+            font-weight: 400;
+        }
+
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 122, 109, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--pine-green);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--pine-green);
+        }
+
+        nav a.active {
+            color: var(--pine-green);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            padding: 12rem 5% 5rem;
+            text-align: center;
+            background: var(--light-gray);
+        }
+
+        .page-header h1 {
+            color: var(--dark-text);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+        }
+
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text p {
+            text-align: left;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--warm-gray) 0%, var(--light-gray) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pine-green);
+            font-style: italic;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .credentials {
+            background: var(--light-gray);
+            padding: 4rem 3rem;
+            margin-top: 5rem;
+            border-radius: 32px;
+        }
+
+        .credentials h3 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .credential-item {
+            text-align: center;
+        }
+
+        .credential-item strong {
+            color: var(--pine-green);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .page-header {
+                padding: 10rem 5% 4rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .page-header h1 {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .about-content > div {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .credentials {
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .about-image {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(100, 122, 109, 0.15);
+        }
+
+        .credential-item {
+            transition: transform 0.3s ease;
+        }
+
+        .credential-item:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Amelia Norvell</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="approach.html">Approach</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>A Partnership Built on Trust</h1>
+        <p>For over 15 years, I've worked alongside C-suite executives and emerging leaders navigating the complexities of modern business. My approach combines rigorous methodology with genuine human connection.</p>
+    </section>
+
+    <!-- About Content -->
+    <section>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>My Philosophy</h3>
+                <p>Excellence in leadership isn't about perfection—it's about clarity, authenticity, and continuous evolution. I believe that every leader possesses untapped potential waiting to be unlocked through thoughtful reflection and strategic action.</p>
+                <p>Drawing from organizational psychology, neuroscience, and decades of leadership research, I create customized coaching experiences that honor your unique context while challenging you to reach new heights.</p>
+                <p>My clients describe our work together as transformative, not just for their careers, but for their entire approach to leadership and life.</p>
+            </div>
+            <div class="about-image">
+                <p>"The privilege of coaching is witnessing the moment when a leader discovers not just what they can do, but who they can become."</p>
+            </div>
+        </div>
+
+        <div class="credentials">
+            <h3>Education & Certifications</h3>
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <p>BS in Psychology<br>Vassar College</p>
+                </div>
+                <div class="credential-item">
+                    <p>Coach Training & Leadership Development Programs<br>Accomplishment Coaching<br>International Coach Federation</p>
+                </div>
+                <div class="credential-item">
+                    <p>Professional Certified Coach (PCC)<br>International Coach Federation</p>
+                </div>
+                <div class="credential-item">
+                    <p>iEQ9 Accredited Enneagram Practitioner<br>Integrative Enneagram Solutions</p>
+                </div>
+                <div class="credential-item">
+                    <p>MBTI Certified Practitioner<br>The Myers-Briggs Company</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="credentials" style="margin-top: 3rem;">
+            <h3>Experience & Specializations</h3>
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <strong>Experience</strong>
+                    <p>15+ years working with executives across all organizational levels<br>6+ years specialized executive coaching<br>Workshop facilitation & leadership development</p>
+                </div>
+                <div class="credential-item">
+                    <strong>Specializations</strong>
+                    <p>Leadership Development<br>Executive Presence<br>Strategic Thinking<br>Self-Confidence & Empowerment<br>Organizational Clarity & Health<br>Coaching<br>Effective Communication<br>Change Management<br>Career Progression</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Amelia Norvell Executive Coaching. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Crafted with attention to detail and commitment to excellence.</p>
+    </footer>
+</body>
+</html>

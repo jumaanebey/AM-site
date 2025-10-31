@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Testimonials | Amelia Norvell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 200;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: 1.5rem;
+            color: var(--medium-text);
+            font-weight: 400;
+        }
+
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 122, 109, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--pine-green);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--pine-green);
+        }
+
+        nav a.active {
+            color: var(--pine-green);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            padding: 12rem 5% 5rem;
+            text-align: center;
+            background: var(--pine-green);
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            color: var(--white);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Testimonials Grid */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            padding: 3rem;
+            background: var(--light-gray);
+            border-left: 4px solid var(--gold-accent);
+            border-radius: 20px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(100, 122, 109, 0.1);
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            color: var(--medium-text);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            color: var(--pine-green);
+            font-weight: 500;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+            margin-top: 0.5rem;
+        }
+
+        /* Featured Testimonial */
+        .featured-testimonial {
+            background: var(--pine-green);
+            color: var(--white);
+            padding: 5rem;
+            text-align: center;
+            margin: 5rem 0;
+            border-radius: 32px;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .featured-testimonial .testimonial-text {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .featured-testimonial .testimonial-author {
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+        }
+
+        .featured-testimonial .testimonial-role {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-testimonial {
+                padding: 3rem 2rem;
+            }
+
+            .featured-testimonial .testimonial-text {
+                font-size: 1.25rem;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .page-header {
+                padding: 10rem 5% 4rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .page-header h1 {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Amelia Norvell</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="approach.html">Approach</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>What Clients Say</h1>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p class="testimonial-text">"Wow. Working with Amelia was absolutely one of the best decisions I've ever made. Both professionally and personally, I've had breakthroughs and successes I didn't think were possible."</p>
+                <p class="testimonial-author">Francisco</p>
+                <p class="testimonial-role">Public Speaker, Health Consultant, & Co-Founder</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"After months of feeling stuck in my career shift, working with Amelia helped me uncover the mental blocks limiting my options."</p>
+                <p class="testimonial-author">Sophia</p>
+                <p class="testimonial-role">Lead Design Strategist</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"I came to Amelia looking for some specific coaching around my career. She quickly expanded my way of thinking and together we produced results in different areas of my life that I never thought possible!"</p>
+                <p class="testimonial-author">Jason</p>
+                <p class="testimonial-role">Founder & Coach</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"I learned so much about myself working with Amelia, it was truly an eye-opening experience for me."</p>
+                <p class="testimonial-author">Charlene</p>
+                <p class="testimonial-role">Events Marketing Manager</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"Amelia's empathy, authenticity, and generosity of spirit are her superpowers as a coach."</p>
+                <p class="testimonial-author">Karen</p>
+                <p class="testimonial-role">Director of People & Culture Operations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    <section class="featured-testimonial">
+        <p class="testimonial-text">"Working with Amelia was truly a transformational experience. She helped me see more of myself then I was ever able to see prior."</p>
+        <p class="testimonial-author">Crystal</p>
+        <p class="testimonial-role">Founder</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Amelia Norvell Executive Coaching. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Crafted with attention to detail and commitment to excellence.</p>
+    </footer>
+</body>
+</html>

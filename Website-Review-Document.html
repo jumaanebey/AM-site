@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Review - Amelia Norvell Executive Coaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-text);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--gold-accent);
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--pine-green);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .header .subtitle {
+            font-size: 1.15rem;
+            color: var(--medium-text);
+            font-weight: 400;
+        }
+
+        .header .date {
+            font-size: 0.95rem;
+            color: var(--medium-text);
+            margin-top: 20px;
+            font-weight: 300;
+        }
+
+        /* Overview Box */
+        .overview {
+            background: linear-gradient(135deg, var(--pine-green) 0%, #7a958c 100%);
+            color: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 45px;
+        }
+
+        .overview h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .overview p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Section Headers */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.9rem;
+            font-weight: 400;
+            color: var(--pine-green);
+            margin-top: 50px;
+            margin-bottom: 25px;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--dark-text);
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--pine-green);
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        /* Page Cards */
+        .page-card {
+            background: var(--light-gray);
+            border-left: 4px solid var(--gold-accent);
+            padding: 28px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .page-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 122, 109, 0.12);
+        }
+
+        .page-card h3 {
+            margin-top: 0;
+            color: var(--pine-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .page-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--pine-green);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Lists */
+        ul {
+            margin: 16px 0 16px 24px;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+            color: var(--medium-text);
+            font-size: 1rem;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold-accent);
+            font-weight: bold;
+        }
+
+        .sub-list {
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+
+        .sub-list li::before {
+            content: "→";
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: var(--white);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: var(--pine-green);
+            font-weight: 500;
+            border: 1px solid var(--warm-gray);
+        }
+
+        /* Design Specs */
+        .design-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .spec-item {
+            background: var(--white);
+            border: 1px solid var(--warm-gray);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--medium-text);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            font-size: 1.1rem;
+            color: var(--dark-text);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--pine-green);
+            color: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            margin-top: 55px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: var(--white);
+            margin: 0 0 16px 0;
+            font-size: 1.4rem;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 8px 0;
+            font-size: 1.05rem;
+        }
+
+        .footer .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 32px;
+            background: var(--gold-accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .footer .button:hover {
+            background: #c99400;
+            transform: translateY(-2px);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                padding: 20px;
+            }
+            .page-card {
+                break-inside: avoid;
+            }
+            .footer .button {
+                display: none;
+            }
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--warm-gray), transparent);
+            margin: 40px 0;
+        }
+
+        /* Status Badge */
+        .status {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Website Review Document</h1>
+            <p class="subtitle">Amelia Norvell Executive Coaching</p>
+            <p class="date">January 2025</p>
+        </div>
+
+        <div class="status">✓ All Updates Complete</div>
+
+        <!-- Overview -->
+        <div class="overview">
+            <h2>Executive Summary</h2>
+            <p>Your new 6-page website has been fully developed with all requested updates successfully implemented. The site features a sophisticated, modern design with refined typography, elegant animations, and a mobile-responsive layout optimized for the executive coaching audience.</p>
+        </div>
+
+        <!-- Design Specifications -->
+        <h2>Design Specifications</h2>
+        <div class="design-specs">
+            <div class="spec-item">
+                <div class="spec-label">Primary Font</div>
+                <div class="spec-value">Montserrat</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Body Font</div>
+                <div class="spec-value">Inter</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Primary Color</div>
+                <div class="spec-value">#647A6D</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Accent Color</div>
+                <div class="spec-value">#B38600</div>
+            </div>
+        </div>
+
+        <h4>Design Features</h4>
+        <ul>
+            <li>Light, elegant typography with refined weight (200-400)</li>
+            <li>Rounded, modern aesthetic with pill-shaped buttons</li>
+            <li>Subtle fade-in animations with staggered timing</li>
+            <li>Fully responsive across desktop, tablet, and mobile devices</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <!-- Page Updates -->
+        <h2>Implemented Updates by Page</h2>
+
+        <div class="page-card">
+            <h3><span class="page-icon">H</span> Homepage</h3>
+            <ul>
+                <li>CTA button text changed to <span class="highlight">"Learn More"</span></li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">A</span> About Page</h3>
+            <h4>Updated Credentials</h4>
+            <ul class="sub-list">
+                <li>BS in Psychology - Vassar College</li>
+                <li>Coach Training & Leadership Development Programs - Accomplishment Coaching</li>
+                <li>Professional Certified Coach (PCC) - International Coach Federation</li>
+                <li>iEQ9 Accredited Enneagram Practitioner - Integrative Enneagram Solutions</li>
+                <li>MBTI Certified Practitioner - The Myers-Briggs Company</li>
+            </ul>
+            <h4>Experience & Specializations Added</h4>
+            <ul class="sub-list">
+                <li>15+ years working with executives across all organizational levels</li>
+                <li>6+ years specialized executive coaching</li>
+                <li>Workshop facilitation & leadership development</li>
+                <li>Key specializations: Leadership Development, Executive Presence, Strategic Thinking, Self-Confidence & Empowerment, Organizational Clarity & Health</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">S</span> Services Page</h3>
+            <ul>
+                <li>CTA heading updated to <span class="highlight">"Ready to Elevate Your Life?"</span></li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">P</span> Approach Page</h3>
+            <h4>Process Steps (Condensed to 3, removed numbering)</h4>
+            <ul class="sub-list">
+                <li><strong>Discovery</strong> - We begin with deep listening—understanding your context, aspirations, challenges, and what success truly means to you</li>
+                <li><strong>Alignment</strong> - Together, we establish clear objectives and success metrics to guide our coaching journey</li>
+                <li><strong>Insights & Integration</strong> - Through powerful conversations, targeted exercises, and real-world application, we transform insights into lasting change</li>
+            </ul>
+            <h4>Guiding Principles Updates</h4>
+            <ul class="sub-list">
+                <li>Changed "Evidence-Based" to <span class="highlight">"Evidence-Based & Holistic"</span> with expanded description covering organizational psychology, neuroscience, leadership studies, mindfulness practices, and integrative approaches</li>
+                <li>Updated "Confidential" principle (removed "complete" for cleaner language)</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">T</span> Testimonials Page</h3>
+            <ul>
+                <li>Header changed to <span class="highlight">"What Clients Say"</span></li>
+                <li>Removed subheader text for cleaner presentation</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">C</span> Contact Page</h3>
+            <h4>Contact Information</h4>
+            <ul class="sub-list">
+                <li>Email updated to <span class="highlight">amelia@amelianorvell.com</span> throughout</li>
+                <li>Phone number section completely removed</li>
+                <li>Location updated to <span class="highlight">"New York City"</span> with "Clients globally" subtitle</li>
+            </ul>
+            <h4>"What to Expect" Section (Redesigned without numbering)</h4>
+            <ul class="sub-list">
+                <li><strong>Initial Session</strong> - A complimentary 45-minute conversation to explore your goals and determine if we're a good fit</li>
+                <li><strong>Alignment</strong> - Together, we establish clear objectives and success metrics for our coaching journey</li>
+                <li><strong>Assessment</strong> - Complete an MBTI or Enneagram assessment, or a 360 Feedback Review to support our work and direction</li>
+                <li><strong>Transformation</strong> - Begin our coaching partnership with regular sessions focused on sustainable growth</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Website Structure -->
+        <h2>Website Structure</h2>
+        <div class="design-specs">
+            <div class="spec-item">
+                <div class="spec-label">Total Pages</div>
+                <div class="spec-value">6 Pages</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Navigation</div>
+                <div class="spec-value">Consistent</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Mobile Ready</div>
+                <div class="spec-value">100%</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Status</div>
+                <div class="spec-value">Complete</div>
+            </div>
+        </div>
+
+        <h4>Site Files</h4>
+        <ul>
+            <li><strong>index.html</strong> - Homepage with hero section</li>
+            <li><strong>about.html</strong> - About page with credentials and philosophy</li>
+            <li><strong>services.html</strong> - Services overview (Executive Coaching, Leadership Intensives, Team Coaching)</li>
+            <li><strong>approach.html</strong> - Coaching methodology and guiding principles</li>
+            <li><strong>testimonials.html</strong> - Client testimonials showcase</li>
+            <li><strong>contact.html</strong> - Contact information and engagement process</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <!-- Recommendations -->
+        <h2>Recommendations for Next Steps</h2>
+
+        <div class="page-card">
+            <h3><span class="page-icon">1</span> Content Enhancement</h3>
+            <ul>
+                <li><strong>Real Testimonials:</strong> Replace placeholder testimonials with actual client quotes from your current site for authentic social proof</li>
+                <li><strong>Professional Photography:</strong> Add professional headshot and brand photography to strengthen visual identity</li>
+                <li><strong>Case Studies:</strong> Consider adding 2-3 anonymized case studies demonstrating transformation outcomes</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">2</span> Additional Features</h3>
+            <ul>
+                <li><strong>Facilitation Services Page:</strong> Create dedicated page for workshop facilitation offerings (as mentioned in feedback)</li>
+                <li><strong>Blog/Insights Section:</strong> Add thought leadership content to establish expertise and improve SEO</li>
+                <li><strong>Resources/Downloads:</strong> Offer free resources (leadership assessments, guides) to capture leads</li>
+                <li><strong>Calendar Integration:</strong> Add Calendly or similar booking system for seamless consultation scheduling</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">3</span> Technical Optimization</h3>
+            <ul>
+                <li><strong>Custom Domain:</strong> Set up amelianorvell.com or similar professional domain</li>
+                <li><strong>Web Hosting:</strong> Deploy to professional hosting (Netlify, Vercel, or similar)</li>
+                <li><strong>SEO Optimization:</strong> Add meta descriptions, Open Graph tags, and structured data for better search visibility</li>
+                <li><strong>Analytics:</strong> Implement Google Analytics or privacy-focused alternative to track visitor behavior</li>
+                <li><strong>Contact Form:</strong> Add functional contact form with email integration (currently using mailto links)</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">4</span> Marketing Integration</h3>
+            <ul>
+                <li><strong>Email Newsletter:</strong> Add newsletter signup for lead nurturing</li>
+                <li><strong>LinkedIn Integration:</strong> Link to LinkedIn profile/articles for professional credibility</li>
+                <li><strong>Media/Press Kit:</strong> Create downloadable media kit for speaking engagements</li>
+                <li><strong>Video Content:</strong> Consider adding introduction video or client testimonial videos</li>
+            </ul>
+        </div>
+
+        <div class="page-card">
+            <h3><span class="page-icon">5</span> Accessibility & Performance</h3>
+            <ul>
+                <li><strong>Accessibility Audit:</strong> Ensure WCAG compliance for screen readers and keyboard navigation</li>
+                <li><strong>Performance Optimization:</strong> Compress images, minify CSS for faster load times</li>
+                <li><strong>SSL Certificate:</strong> Ensure HTTPS for security and trust</li>
+                <li><strong>Mobile Testing:</strong> Test thoroughly across all device sizes and browsers</li>
+            </ul>
+        </div>
+
+        <!-- Footer / Next Steps -->
+        <div class="footer">
+            <h3>Ready for Review</h3>
+            <p>Open <strong>index.html</strong> in your browser to explore the complete website.</p>
+            <p>Navigate through all pages to review content, design, and functionality.</p>
+            <a href="index.html" class="button">View Website</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Contact | Amelia Norvell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 200;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            color: var(--pine-green);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: 1.5rem;
+            color: var(--medium-text);
+            font-weight: 400;
+        }
+
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 122, 109, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--pine-green);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--pine-green);
+        }
+
+        nav a.active {
+            color: var(--pine-green);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            padding: 12rem 5% 5rem;
+            text-align: center;
+            background: var(--light-gray);
+        }
+
+        .page-header h1 {
+            color: var(--dark-text);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+        }
+
+        /* Contact Content */
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-accent), transparent);
+            margin: 4rem auto;
+            max-width: 200px;
+        }
+
+        .contact-info {
+            margin: 4rem 0;
+        }
+
+        .contact-item {
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--pine-green);
+            text-decoration: none;
+            font-size: 1.25rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            border-bottom-color: var(--pine-green);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark-text);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--dark-text);
+            background: var(--white);
+            border: 1px solid var(--warm-gray);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--pine-green);
+            box-shadow: 0 0 0 3px rgba(100, 122, 109, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .cta-button {
+            width: 100%;
+            margin-top: 1rem;
+            cursor: pointer;
+            border: 1px solid var(--pine-green);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--pine-green);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--pine-green);
+            border-radius: 50px;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--pine-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 122, 109, 0.2);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--pine-green);
+            color: var(--white);
+            padding: 6rem 5%;
+            margin-top: 5rem;
+            border-radius: 32px;
+        }
+
+        .process-section h3 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            margin-bottom: 3rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-step h4 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .process-step p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .page-header {
+                padding: 10rem 5% 4rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .page-header h1 {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Amelia Norvell</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="approach.html">Approach</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Let's Begin</h1>
+        <p>Excellence doesn't happen by accident. Whether that's becoming an exceptional leader or creating an exceptional life, it's cultivated through intention, reflection, and partnership.</p>
+    </section>
+
+    <!-- Contact Content -->
+    <section>
+        <div class="contact-content">
+            <div class="divider"></div>
+            <p>I work with a select number of clients to ensure each receives my full attention and commitment. If you're ready to invest in your growth and amplify your impact, I'd be honored to explore how we might work together.</p>
+
+            <!-- Contact Form -->
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">I'm interested in *</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="executive-coaching">Executive Coaching</option>
+                        <option value="leadership-intensive">Leadership Intensive</option>
+                        <option value="team-coaching">Team Coaching</option>
+                        <option value="private-coaching">Private Coaching</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell me about your goals *</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+
+            <div class="contact-info" style="margin-top: 4rem;">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:amelia@amelianorvell.com">amelia@amelianorvell.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p style="color: var(--pine-green); font-size: 1.1rem;">New York City<br>
+                    <span style="font-size: 0.95rem; color: var(--medium-text);">Clients globally</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <h3>What to Expect</h3>
+        <div class="process-grid">
+            <div class="process-step">
+                <h4>Initial Session</h4>
+                <p>A complimentary 45-minute conversation to explore your goals and determine if we're a good fit.</p>
+            </div>
+            <div class="process-step">
+                <h4>Alignment</h4>
+                <p>Together, we establish clear objectives and success metrics for our coaching journey.</p>
+            </div>
+            <div class="process-step">
+                <h4>Assessment</h4>
+                <p>Complete an MBTI or Enneagram assessment, or a 360 Feedback Review to support our work and direction.</p>
+            </div>
+            <div class="process-step">
+                <h4>Transformation</h4>
+                <p>Begin our coaching partnership with regular sessions focused on sustainable growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Amelia Norvell Executive Coaching. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Crafted with attention to detail and commitment to excellence.</p>
+    </footer>
+</body>
+</html>
