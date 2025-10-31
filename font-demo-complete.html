@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Font Collection - AM Coaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alice&family=Cormorant+Garamond:wght@300;400;500;600&family=Crimson+Text:wght@400;600;700&family=DM+Serif+Display:wght@400&family=Fraunces:wght@600&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600&family=Noto+Serif:wght@400;500;600&family=Ovo&family=Playfair+Display:wght@400;700;900&family=Quando&family=Radley:wght@400&family=Vollkorn:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background-color: var(--light-gray);
+            padding: 3rem 5%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--pine-green);
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--medium-text);
+        }
+
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .font-option {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .font-option:hover {
+            border-color: var(--pine-green);
+            box-shadow: 0 8px 24px rgba(100, 122, 109, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .font-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .font-sample {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .tagline-sample {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: var(--pine-green);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Font Classes */
+        .abril { font-family: 'Abril Fatface', serif; font-weight: 400; }
+        .alice { font-family: 'Alice', serif; font-weight: 400; }
+        .cormorant { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        .crimson { font-family: 'Crimson Text', serif; font-weight: 700; }
+        .dm-serif { font-family: 'DM Serif Display', serif; font-weight: 400; }
+        .fraunces { font-family: 'Fraunces', serif; font-weight: 600; }
+        .libre { font-family: 'Libre Baskerville', serif; font-weight: 400; }
+        .lora { font-family: 'Lora', serif; font-weight: 400; }
+        .noto { font-family: 'Noto Serif', serif; font-weight: 400; }
+        .ovo { font-family: 'Ovo', serif; font-weight: 400; }
+        .playfair-black { font-family: 'Playfair Display', serif; font-weight: 900; }
+        .playfair { font-family: 'Playfair Display', serif; font-weight: 400; }
+        .quando { font-family: 'Quando', serif; font-weight: 400; }
+        .radley { font-family: 'Radley', serif; font-weight: 400; }
+        .vollkorn { font-family: 'Vollkorn', serif; font-weight: 600; }
+
+        .back-link {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .back-link a {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--pine-green);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem 0.5rem;
+        }
+
+        .back-link a:hover {
+            background: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 122, 109, 0.2);
+        }
+
+        .note {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            color: var(--medium-text);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .font-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .font-sample {
+                font-size: 1.5rem;
+            }
+
+            .font-option {
+                padding: 2rem 1.5rem;
+            }
+
+            .back-link a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Complete Font Collection</h1>
+        <p>All requested serif fonts - click any to select</p>
+    </div>
+
+    <div class="note">
+        Note: Some fonts from Canva may not be available on Google Fonts. Showing all available options below.
+    </div>
+
+    <div class="font-grid">
+        <!-- Abril Fatface -->
+        <div class="font-option" onclick="selectFont('Abril Fatface')">
+            <div class="font-name">Abril Fatface</div>
+            <div class="font-sample abril">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Alice -->
+        <div class="font-option" onclick="selectFont('Alice')">
+            <div class="font-name">Alice</div>
+            <div class="font-sample alice">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Cormorant Garamond -->
+        <div class="font-option" onclick="selectFont('Cormorant Garamond')">
+            <div class="font-name">Cormorant Garamond ⭐ (Current Favorite)</div>
+            <div class="font-sample cormorant">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Crimson Text Bold -->
+        <div class="font-option" onclick="selectFont('Crimson Text Bold')">
+            <div class="font-name">Crimson Text Bold</div>
+            <div class="font-sample crimson">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- DM Serif Display -->
+        <div class="font-option" onclick="selectFont('DM Serif Display')">
+            <div class="font-name">DM Serif Display</div>
+            <div class="font-sample dm-serif">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Fraunces Semibold -->
+        <div class="font-option" onclick="selectFont('Fraunces Semibold')">
+            <div class="font-name">Fraunces Semibold</div>
+            <div class="font-sample fraunces">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Libre Baskerville -->
+        <div class="font-option" onclick="selectFont('Libre Baskerville')">
+            <div class="font-name">Libre Baskerville</div>
+            <div class="font-sample libre">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Lora -->
+        <div class="font-option" onclick="selectFont('Lora')">
+            <div class="font-name">Lora</div>
+            <div class="font-sample lora">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Noto Serif -->
+        <div class="font-option" onclick="selectFont('Noto Serif')">
+            <div class="font-name">Noto Serif</div>
+            <div class="font-sample noto">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Ovo -->
+        <div class="font-option" onclick="selectFont('Ovo')">
+            <div class="font-name">Ovo</div>
+            <div class="font-sample ovo">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Playfair Display -->
+        <div class="font-option" onclick="selectFont('Playfair Display')">
+            <div class="font-name">Playfair Display</div>
+            <div class="font-sample playfair">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Playfair Display Black -->
+        <div class="font-option" onclick="selectFont('Playfair Display Black')">
+            <div class="font-name">Playfair Display Black</div>
+            <div class="font-sample playfair-black">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Quando -->
+        <div class="font-option" onclick="selectFont('Quando')">
+            <div class="font-name">Quando</div>
+            <div class="font-sample quando">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Radley -->
+        <div class="font-option" onclick="selectFont('Radley')">
+            <div class="font-name">Radley</div>
+            <div class="font-sample radley">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+
+        <!-- Vollkorn Semibold -->
+        <div class="font-option" onclick="selectFont('Vollkorn Semibold')">
+            <div class="font-name">Vollkorn Semibold</div>
+            <div class="font-sample vollkorn">Lead with Clarity.<br>Excel with Confidence.</div>
+            <div class="tagline-sample">Executive coaching for leaders who demand excellence</div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Not available on Google Fonts:</strong> Ansing, Athachantr, Bodoni FLF, CMU Serif, Kudryashev Display, Kulachat Serif, Migra, Roca Two, Safira March, The Seasons (Canva exclusive fonts)
+    </div>
+
+    <div class="back-link">
+        <a href="font-demo.html">View Original 5</a>
+        <a href="font-demo-thin.html">View Thin Options</a>
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <script>
+        function selectFont(fontName) {
+            alert('You selected: ' + fontName + '\n\nLet me know this choice and I\'ll apply it to the entire site!');
+        }
+    </script>
+</body>
+</html>
