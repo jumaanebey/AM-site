@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Options - AM Coaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=EB+Garamond:wght@400;500;600&family=Crimson+Text:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pine-green: #647A6D;
+            --gold-accent: #B38600;
+            --warm-gray: #E8E4E0;
+            --light-gray: #F7F5F3;
+            --white: #FFFFFF;
+            --dark-text: #2A2A2A;
+            --medium-text: #5A5A5A;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background-color: var(--light-gray);
+            padding: 3rem 5%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--pine-green);
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--medium-text);
+        }
+
+        .font-option {
+            background: var(--white);
+            padding: 4rem 3rem;
+            margin-bottom: 2rem;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .font-option:hover {
+            border-color: var(--pine-green);
+            box-shadow: 0 8px 24px rgba(100, 122, 109, 0.15);
+        }
+
+        .font-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-accent);
+            margin-bottom: 2rem;
+        }
+
+        .font-sample {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .font-sample.cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .font-sample.playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sample.eb-garamond {
+            font-family: 'EB Garamond', serif;
+        }
+
+        .font-sample.crimson {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .font-sample.libre {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .font-description {
+            font-size: 1rem;
+            color: var(--medium-text);
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: var(--pine-green);
+            font-weight: 300;
+            margin-top: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .back-link a {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--pine-green);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link a:hover {
+            background: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 122, 109, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .font-sample {
+                font-size: 2rem;
+            }
+
+            .font-option {
+                padding: 2.5rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Choose Your Font</h1>
+        <p>Select the font that best represents the AM brand</p>
+    </div>
+
+    <!-- Option 1: Cormorant Garamond -->
+    <div class="font-option">
+        <div class="font-name">Option 1: Cormorant Garamond</div>
+        <div class="font-sample cormorant">Lead with Clarity.<br>Excel with Confidence.</div>
+        <div class="font-description">Elegant and warm with soft, flowing curves. Classic old-style serif with excellent readability.</div>
+        <div class="tagline">Executive coaching for leaders who demand excellence</div>
+    </div>
+
+    <!-- Option 2: Playfair Display -->
+    <div class="font-option">
+        <div class="font-name">Option 2: Playfair Display</div>
+        <div class="font-sample playfair">Lead with Clarity.<br>Excel with Confidence.</div>
+        <div class="font-description">High-contrast, editorial style. Dramatic and sophisticated with strong presence.</div>
+        <div class="tagline">Executive coaching for leaders who demand excellence</div>
+    </div>
+
+    <!-- Option 3: EB Garamond -->
+    <div class="font-option">
+        <div class="font-name">Option 3: EB Garamond</div>
+        <div class="font-sample eb-garamond">Lead with Clarity.<br>Excel with Confidence.</div>
+        <div class="font-description">Classic and refined with beautiful oval letters. Timeless elegance and scholarly sophistication.</div>
+        <div class="tagline">Executive coaching for leaders who demand excellence</div>
+    </div>
+
+    <!-- Option 4: Crimson Text -->
+    <div class="font-option">
+        <div class="font-name">Option 4: Crimson Text</div>
+        <div class="font-sample crimson">Lead with Clarity.<br>Excel with Confidence.</div>
+        <div class="font-description">Old-style serif with subtle elegance. Warm and approachable yet professional.</div>
+        <div class="tagline">Executive coaching for leaders who demand excellence</div>
+    </div>
+
+    <!-- Option 5: Libre Baskerville -->
+    <div class="font-option">
+        <div class="font-name">Option 5: Libre Baskerville</div>
+        <div class="font-sample libre">Lead with Clarity.<br>Excel with Confidence.</div>
+        <div class="font-description">Clean and slightly condensed. Strong, confident presence with excellent legibility.</div>
+        <div class="tagline">Executive coaching for leaders who demand excellence</div>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">Back to Home</a>
+    </div>
+</body>
+</html>
