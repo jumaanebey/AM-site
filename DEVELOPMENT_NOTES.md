@@ -6,7 +6,88 @@ Executive coaching website for Amelia Norvell, codename "AM" for launch. Profess
 **Live Site:** https://am-coaching.vercel.app
 **Repository:** https://github.com/jumaanebey/AM-site
 
-## Major Update Session (2025-11-02)
+## Major Simplification & Polish Session (2025-11-02 PM)
+
+### Services Page Overhaul - Focus on Clarity
+
+1. **REMOVED UNNECESSARY CONTENT**
+   - Deleted paragraph mentioning ZocDoc, Capital IQ/S&P (never mention prior employers)
+   - Removed "New Offerings" section entirely (EQ, Values, Listening, Difficult Conversations)
+   - Removed all emojis from entire website (never add again)
+   - Removed em dashes (—) from entire website, replaced with hyphens (never add again)
+   - Education is NOT important - focus on PCC, MBTI, Enneagram as tools only
+
+2. **CORPORATE CLIENTS - INDIVIDUALS**
+   - Consolidated from 4 cards to 2 cards:
+     - Executive Coaching (6 or 12 months)
+     - Executive Coaching + 360 Review (6 or 12 months)
+   - Added "Confidential support" bullet to 360 Review
+
+3. **EXECUTIVE TEAMS**
+   - Simplified to single offering: "Org Clarity & Team Effectiveness: The Advantage"
+   - Added prioritization focus: "helping executive teams gain clarity on priorities while building cohesion and high performance"
+   - Bullets: Quarterly executive team offsites, Strategic clarity & alignment, Team health assessment, Ongoing team development
+
+4. **ASSESSMENT TOOLS SECTION**
+   - Created dedicated section with proper explanations
+   - MBTI: Full explanation as certified practitioner
+   - Enneagram: Full explanation as iEQ9 Accredited Practitioner
+   - Removed "Format:" sections for cleaner presentation
+   - Removed duplicate MBTI/Enneagram cards from other sections
+
+5. **GROUP WORKSHOPS** (renamed from "Teams & Groups")
+   - Communications workshops: Removed "1 session" and "memo" references
+   - Removed empty emoji circles (service-icon divs)
+
+6. **GOLD ACCENT USAGE**
+   - Services page: Gold section headers and bullet arrows
+   - Testimonials page: Gold author names only (removed gold borders)
+   - Homepage: Gold tagline "Executive Coach & Organizational Consultant"
+
+### Testimonials Page Improvements
+
+1. **LAYOUT & ALIGNMENT**
+   - Changed header background from green to light-gray (consistency with other pages)
+   - Made all testimonial cards equal height using flexbox
+   - Names now align horizontally across each row of 3
+   - Tightened name/title spacing (margin-bottom: 0.25rem, margin-top: 0)
+   - Reduced section padding from 4rem to 3rem
+
+2. **CONTENT UPDATES**
+   - Moved Crystal testimonial from featured section to regular grid (6 total testimonials)
+   - Changed all author names to gold color
+   - Removed gold borders from cards
+   - Francisco title: "Public Speaker & Co-Founder" (removed "Health Consultant")
+
+### Site-Wide Visual Polish
+
+1. **FOOTER CONSISTENCY**
+   - Changed all footers to solid white background (#FFFFFF)
+   - Footer divider lines remain dark-text
+   - Homepage tagline changed to gold
+
+2. **COLOR REFINEMENTS**
+   - Primary green: #647A6D (brand color for headers, CTAs, navigation)
+   - Gold accent: #B38600 (testimonial names, services headers, homepage tagline)
+   - Cool-gray: #E8EAED (backgrounds)
+   - Body: White (#FFFFFF)
+
+3. **DESIGN RULES ESTABLISHED**
+   - NO emojis ever
+   - NO em dashes ever
+   - NO mention of prior employers (ZocDoc, Capital IQ/S&P)
+   - Education NOT important
+   - MBTI & Enneagram positioned as professional tools only
+
+### Key Achievements
+- Services page dramatically simplified and less overwhelming
+- Consistent visual hierarchy across all pages
+- Gold accent strategically used for emphasis
+- Testimonials page fully aligned and polished
+- Site-wide footer consistency
+- Clean, professional presentation throughout
+
+## Major Update Session (2025-11-02 AM)
 
 ### Complete Brand & Messaging Overhaul
 
