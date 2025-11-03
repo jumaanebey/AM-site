@@ -1,10 +1,52 @@
 # AM Executive Coaching Website - Development Notes
 
 ## Project Overview
-Executive coaching website for Amelia Norvell, codename "AM" for launch. Professional, elegant design with minimalist aesthetic.
+Executive coaching website for Amelia Norvell, codename "AM" for launch. Professional, warm design focused on personal breakthrough methodology.
 
 **Live Site:** https://am-coaching.vercel.app
 **Repository:** https://github.com/jumaanebey/AM-site
+
+## Major Update Session (2025-11-02)
+
+### Complete Brand & Messaging Overhaul
+
+1. **COLOR PALETTE TRANSFORMATION**
+   - PRIMARY BRAND COLOR: Changed from pine-green to primary-green (#647A6D)
+   - Applied primary green to: all headers, CTAs, navigation highlights, logos
+   - GOLD ACCENT: (#B38600) - specifically featured on testimonials page
+   - NEW COOL PALETTE: Replaced warm grays with cool tones
+     - cool-gray: #E8EAED
+     - light-gray: #F5F7FA
+     - soft-blue: #F0F4F8
+   - REMOVED: All navy colors from entire website
+
+2. **HERO SECTION COMPLETE REWRITE**
+   - NEW H1: "Challenge Your Personal Status Quo"
+   - NEW TAGLINE: "Executive Coach & Organizational Consultant"
+   - NEW BODY: "I support leaders seeking deeper impact in taking an in-depth look at where they are versus where they truly want to be, and help identify what's getting in the way of their transformation."
+
+3. **KEY MESSAGING CHANGES**
+   - Replaced "transformation" → "personal breakthrough" throughout services
+   - Replaced "leadership mastery" → "leadership development"
+   - Added "seeking deeper impact" as core value proposition
+   - Added "powerful questions that unlock limiting beliefs" in approach page
+   - Added "psychological insight" in about page
+   - Maintained separation between "psychological insight" and "powerful questions"
+
+4. **PAGE-BY-PAGE UPDATES**
+   - **index.html**: New hero copy, primary green branding
+   - **services.html**: All "transformation" → "personal breakthrough", primary green colors
+   - **about.html**: Added psychological insight, seeking deeper impact, personal breakthrough
+   - **approach.html**: Added powerful questions messaging
+   - **contact.html**: Updated to reflect personal breakthrough focus
+   - **testimonials.html**: Gold accent borders and author names
+
+5. **VISUAL IMPROVEMENTS**
+   - Maintained clean, modern typography (NO script fonts)
+   - 50/50 professional/warm balance preserved
+   - Primary green creates cohesive brand identity
+   - Gold accents add warmth on testimonials
+   - Cool-toned palette transitions to white backgrounds
 
 ## Recent Work Session (2025-11-01)
 
@@ -33,12 +75,13 @@ Executive coaching website for Amelia Norvell, codename "AM" for launch. Profess
 
 ## Design System
 
-### Color Palette
+### Color Palette (Updated 2025-11-02)
 ```css
---pine-green: #647A6D;
---gold-accent: #B38600;
---warm-gray: #E8E4E0;
---light-gray: #F7F5F3;
+--primary-green: #647A6D;  /* Primary brand color */
+--gold-accent: #B38600;     /* Testimonials accents */
+--cool-gray: #E8EAED;       /* Supporting cool tone */
+--light-gray: #F5F7FA;      /* Background cool tone */
+--soft-blue: #F0F4F8;       /* Additional cool tone */
 --white: #FFFFFF;
 --dark-text: #2A2A2A;
 --medium-text: #5A5A5A;
